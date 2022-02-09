@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+   {% for episode in ep %}
+   <h4>{{ episode.title }}</h4>
+        <audio controls="enabled" preload="none">
+            <source src="{{ episode.audiolink }}"
+            type="audio/mpeg">
+       </audio>
+   {% endfor %}
+</body>
+</html>
