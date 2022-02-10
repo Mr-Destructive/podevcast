@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+
+{% block body %}
+    <ul>
+    {% for podcast in ep %}
+        <li><a href="">{{ podcast.title }}</a></li>
+        <img src="{{ podcast.cover }}" width=150px" height="150px">
+    {% endfor %}
+
+{% endblock %}
