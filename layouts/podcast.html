@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% block body %}
+    <h2>{{ podcast.title }}</h2>
+    <img src="{{ podcast.cove }}" >
+
+    {% for ep in podcast.list %}
+        <h3>{{ ep.title }}</h3>
+        <audio controls="enabled" preload="none">
+            <source src="{{ ep.audiolink }}" type="audio/mpeg">
+        </audio>   
+    {% endfor %}
+{% endblock %}
