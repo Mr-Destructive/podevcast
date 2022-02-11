@@ -39,13 +39,17 @@ for feed_link in feed_list:
         if(feed['entries'][i].has_key('image')):
             cover_image = feed['entries'][i]['image']['href']
         else:
-            cover_image = feed['feed']['image']
+            cover_image = None
+
 
         obj = {}
 
         obj['title'] = ep_title
         obj['audiolink'] = audiofiles
-        obj['cover'] = cover_image
+        if cover_image:
+            obj['cover'] = cover_image
+        else:
+            obj['cover'] = None
         ep_list.append(obj)
         if(i==0):    
             ep.append(obj)
@@ -56,7 +60,10 @@ for feed_link in feed_list:
     pod_name=pod_obj['title']
     pod_name = pod_name.replace(' ', '_')
     
-    pod_obj['cover'] = feed['feed']['image']['href']
+    if cover_image:
+        pod_obj['cover'] = feed['feed']['image']['href']
+    else:
+        pod_obj['cover'] = None
     pod_obj['list'] = ep_list
     pod_obj['links'] = f"/{pod_name}/"
     pod_list.append(pod_obj)
@@ -64,9 +71,8 @@ for feed_link in feed_list:
     os.system(f"cd site/ && mkdir list")
     os.system("touch site/list/index.html")
 
-    pod_path = f"mkdir site/{pod_name}"
     os.system(f"cd site/ && mkdir {pod_name}")
-    os.system("touch "+ pod_path +"/index.html")
+    os.system(f"touch site/{pod_name}/index.html")
 
     with open(os.path.join(f"site/{pod_name}/index.html"), 'w') as pod_file:
             pod_file.write(
@@ -74,8 +80,6 @@ for feed_link in feed_list:
                     podcast = pod_obj
                     )
                 )
-
-
 
 with open(os.path.join('site/index.html'), 'w') as index_file:
     index_file.write(

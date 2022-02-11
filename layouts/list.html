@@ -1,10 +1,15 @@
 {% extends 'index.html' %}
 
 {% block body %}
-    <ul>
+    <link rel="stylesheet" href="../static/style.css" >
+    <ul class="listpod">
     {% for podcast in ep %}
-    <li><a href="{{ podcast.links }}">{{ podcast.title }}</a></li>
-        <img src="{{ podcast.cover }}" width=150px" height="150px">
+    <div class="playerpod">
+        <h3><li><a href="{{ podcast.links }}">{{ podcast.title }}</a></li></h3>
+        {% if podcast.cover %}
+            <img src="{{ podcast.cover }}" width=150px" height="150px">
+        {% endif %}
+    </div>
     {% endfor %}
-
+    </ul>
 {% endblock %}

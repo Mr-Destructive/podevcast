@@ -1,13 +1,19 @@
 {% extends 'index.html' %}
 
 {% block body %}
+    <link rel="stylesheet" href="../static/style.css" >
     <h2>{{ podcast.title }}</h2>
     <img src="{{ podcast.cove }}" >
 
     {% for ep in podcast.list %}
+    <div class='playerpod'>
         <h3>{{ ep.title }}</h3>
+        {% if ep.cover %}
+            <img src="{{ ep.cover }}">
+        {% endif %}
         <audio controls="enabled" preload="none">
             <source src="{{ ep.audiolink }}" type="audio/mpeg">
         </audio>   
+     </div>
     {% endfor %}
 {% endblock %}

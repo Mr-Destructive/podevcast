@@ -9,22 +9,27 @@
     <h2>Podevcast</h2>
     <nav>
         <ul>
-            <li>Home</li>
-            <li>Podcasts</li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/list/">Podcasts</a></li>
+            <li><a href="/about/">About</a></li>
         </ul>
         
     </nav>
    {% block body %}
+   <div class="podhome">
        {% for episode in ep %}
-       <h4>{{ episode.title }}</h4>
+       <div class="playerpod">
+       <h3>{{ episode.title }}</h3>
        {% if episode.cover %}
-       <img src="{{ episode.cover }}" width="50px" height="50px">
+        <img src="{{ episode.cover }}" width="50px" height="50px">
        {% endif %}
             <audio controls="enabled" preload="none">
                 <source src="{{ episode.audiolink }}"
                 type="audio/mpeg">
            </audio>
+       </div>
        {% endfor %}
+   </div>
    {% endblock %}
 </body>
 </html>
