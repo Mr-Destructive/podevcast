@@ -2,7 +2,7 @@
 {
 	--font:'Verdana', cursive;
 	--blue:#006eff;
-	--grey:#adadad;
+	--grey:#dddddd;
 }
 
 body
@@ -34,6 +34,7 @@ nav>ul
 nav>ul>li
 {
     padding-right: 20px;
+    font-size: 30px;
 }
 
 .listpod
@@ -42,28 +43,37 @@ nav>ul>li
     list-style-type: none;
     align-items: center;
     justify-content: space-evenly;
+    color: #555555;
 }
-.listpod>li
+.listpod > .playerpodc, .listpod > .playerpodnc
 {
-    font-size: 30px;
     font-weight: 700;
+    border-bottom: 2px solid var(--blue);
 }
 
 
-li >a
+li > a
 {
     text-decoration: none;
-    color: white;
+    color: #ffffff;
+}
+
+.podlink
+{
+    text-decoration: none;
+    color: #555555;
 }
 
 audio { 
-  width: 600px; 
-  box-shadow: 5px 5px 20px rgba(0,0, 0, 0.4);
-  border-radius: 90px;
-  transform: scale(1.05);
-  background-color: var(-blue);
-  filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
-  height: 55px;
+    width: 600px; 
+    box-shadow: 5px 5px 20px rgba(0,0, 0, 0.4);
+    border-radius: 90px;
+    transform: scale(1.05);
+    background-color: var(-blue);
+    filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
+    position: relative;
+    left: 100%; 
+    height: 55px;
 }
 
 .podhome
@@ -74,6 +84,7 @@ audio {
 .podhome > img
 {
     width: 100%;
+    height: 100%;            
 }
 
 .playerpod{
@@ -83,27 +94,51 @@ audio {
     margin: 20px;
     border-bottom: 2px solid var(--blue);
 }
-.playerpod> img{
+.playerpodc{
+    position: relative;
+    margin: 20px;
+}
+.playerpodc> img{
     width: 100%;
-    height: 100%;            
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0.8; 
 }
-.playerpod> audio
+.playerpodc> audio
 {
     z-index: 3;
     margin: 20px;
     position: relative;
     left:100%;
-    border-bottom: 2px solid var(--blue);
 }
-.playerpod>h3
+.playerpodc>h3 
+{
+    z-index: 3;
+    width: 50vw;
+    position: relative;
+    left: 110%;
+    color: var(--blue);
+    font-weight: 800;
+}
+.playerpodnc > h3
+{
+    z-index: 3;
+    width: 50vw;
+    position: relative;
+    color: var(--blue);
+    font-weight: 800;
+}
+.withcover
 {
     z-index: 3;
     position: relative;
-    left: 100%;
-    margin-left: 40px;
     width: 50vw;
+}
+.playerpodnc
+{
+}
+.logo
+{
+    width: 50px;
+    height: 50px;
 }

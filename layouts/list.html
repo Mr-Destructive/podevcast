@@ -4,12 +4,16 @@
     <link rel="stylesheet" href="../static/style.css" >
     <ul class="listpod">
     {% for podcast in ep %}
-    <div class="playerpod">
-        <h3><li><a href="{{ podcast.links }}">{{ podcast.title }}</a></li></h3>
         {% if podcast.cover %}
-            <img src="{{ podcast.cover }}" width=150px" height="150px">
+            <div class="playerpod">
+                <img src="{{ podcast.cover }}" width="!50px" height="150px">
+                <h3 class="withcover" ><li><a class="podlink" href="{{ podcast.links }}">{{ podcast.title }}</a></li></h3>
+            </div>
+        {% else %}
+            <div class="playerpodnc">
+                <h3><li><a class="podlink" href="{{ podcast.links }}">{{ podcast.title }}</a></li></h3>
+            </div>
         {% endif %}
-    </div>
     {% endfor %}
     </ul>
 {% endblock %}

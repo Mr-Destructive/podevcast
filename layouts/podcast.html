@@ -6,14 +6,20 @@
     <img src="{{ podcast.cove }}" >
 
     {% for ep in podcast.list %}
-    <div class='playerpod'>
-        <h3>{{ ep.title }}</h3>
+        <div class='playerpod'>
         {% if ep.cover %}
-            <img src="{{ ep.cover }}">
+            <div class='playerpodc'>
+                <h3>{{ ep.title }}</h3>
+                <img src="{{ ep.cover }}">
+            </div>
+        {% else %}
+            <div class='playerpodnc'>
+                <h3>{{ ep.title }}</h3>
+            </div>
         {% endif %}
         <audio controls="enabled" preload="none">
             <source src="{{ ep.audiolink }}" type="audio/mpeg">
         </audio>   
-     </div>
+        </div>
     {% endfor %}
 {% endblock %}

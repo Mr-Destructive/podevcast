@@ -24,7 +24,7 @@ for feed_link in feed_list:
 
     pod_obj = {}
     ep_list=[]
-
+    
     feed = feedparser.parse(feed_link)
     #https://feeds.pacific-content.com/commandlineheroes
 
@@ -41,9 +41,9 @@ for feed_link in feed_list:
         else:
             cover_image = None
 
-
         obj = {}
 
+        obj['name'] = feed['feed']['title']
         obj['title'] = ep_title
         obj['audiolink'] = audiofiles
         if cover_image:
@@ -94,5 +94,6 @@ with open(os.path.join('site/list/index.html'), 'w') as list_file:
             ep=pod_list,
         )
     )
+
 os.system('cp -r static site')
 #os.system('python -m http.server -d site')
