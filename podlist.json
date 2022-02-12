@@ -1,0 +1,7 @@
+pod_list= {
+    "Command Line Heroes": "https://feeds.pacific-content.com/commandlineheroes",
+    "Python Podcast": "https://www.pythonpodcast.com/feed/mp3/",
+    "Talk Python to me": "https://talkpython.fm/episodes/rss",
+    "Real Python Podcast": "https://realpython.com/podcasts/rpp/feed",
+    "Django Riffs": "https://feeds.simplecast.com/l_5sU3vk"
+}
