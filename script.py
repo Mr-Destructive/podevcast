@@ -35,7 +35,10 @@ for feed_link in feed_list:
 
     for i in range(0,len(feed['entries'])):
         ep_title = feed['entries'][i]['title']
-        audiofiles = feed['entries'][i]['links'][1]['href']
+        if feed_link is 'https://www.pythonpodcast.com/feed/mp3/':
+            audiofiles = feed['entries'][0]['links'][2]['href']
+        else:
+            audiofiles = feed['entries'][i]['links'][1]['href']
         if(feed['entries'][i].has_key('image')):
             cover_image = feed['entries'][i]['image']['href']
         else:
