@@ -1,5 +1,6 @@
 from jinja2 import Environment, FileSystemLoader
 from pathlib import Path
+from src.categories import create_category_page
 import feedparser
 import json
 import os
@@ -133,6 +134,8 @@ with open(os.path.join('site/list/index.html'), 'w') as list_file:
             ep=pod_list,
         )
     )
+
+create_category_page(pod_list)
 
 os.system('cp -r static site')
 #os.system('python -m http.server -d site')

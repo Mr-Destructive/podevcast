@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+
+{% block body %}
+    <link rel="stylesheet" href="../../static/style.css" >
+    <ul class="listpod">
+    {% for category in categories %}
+            <div class="podnc">
+                <h3><li><a class="podlink" href="{{ category.link }}">{{ category.title }}</a></li></h3>
+            </div>
+    {% endfor %}
+    </ul>
+{% endblock %}

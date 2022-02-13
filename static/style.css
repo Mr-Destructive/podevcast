@@ -43,7 +43,6 @@ nav>ul>li
     flex-wrap: wrap;
     list-style-type: none;
     align-items: center;
-    justify-content: space-evenly;
     color: #555555;
 }
 .listpod > .playerpodc, .listpod > .playerpodnc
@@ -135,9 +134,27 @@ audio {
     position: relative;
     width: 50vw;
 }
-.playerpodnc
+
+.podnc
 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin: 20px;
+    border-bottom: 2px solid var(--blue);
 }
+.podnc > h3
+{
+    z-index: 3;
+    width: 50vw;
+    position: relative;
+    color: var(--blue);
+    font-weight: 800;
+}
+
 .logo
 {
     width: 50px;

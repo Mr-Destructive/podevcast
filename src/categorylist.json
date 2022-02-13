@@ -1,0 +1,13 @@
+{
+        "Web Development": ["Django Riffs"], 
+        "Python": ["Talk Python To Me", "The Python Podcast.__init__", "The Real Python Podcast"], 
+        "Javascript": [], 
+        "Linux": ["Command Line Heroes"], 
+        "Artificial Intelligence": [], 
+        "Dev Lifestyle": [], 
+        "Frontend": [],
+        "Backend": [],
+        "Data Science": [],
+        "Dev Ops": [],
+        "Developer Talks": []
+}
