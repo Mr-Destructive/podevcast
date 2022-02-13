@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+
+{% block body %}
+    <link rel="stylesheet" href="../../../static/style.css" >
+    <div class="playerpod">
+        {% if episode.cover %}
+            <div class='playerpodc'>
+                <h3>{{ episode.title }}</h3>
+                <img src="{{ episode.cover }}">
+            </div>
+        {% else %}
+            <div class='playerpodnc'>
+                <h3>{{ episode.title }}</h3>
+            </div>
+        {% endif %}
+        <audio controls="enabled" preload="none">
+            <source src="{{ episode.audiolink }}" type="audio/mpeg">
+        </audio>   
+        <p>{{ episode.summary }}</p> 
+    </div>
+{% endblock %}

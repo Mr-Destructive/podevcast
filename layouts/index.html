@@ -7,13 +7,13 @@
     <title>Podevcast</title>
 </head>
 <body>
-    <img src="https://res.cloudinary.com/dgpxbrwoz/image/upload/v1644676385/blogmedia/f1kddn4llpcwgd8aegvk.svg" type="image/svg+xml" >
+   <a href="/"><img src="https://res.cloudinary.com/dgpxbrwoz/image/upload/v1644676385/blogmedia/f1kddn4llpcwgd8aegvk.svg" type="image/svg+xml"></a>
     <nav>
         <ul>
-            <li><img src="https://res.cloudinary.com/dgpxbrwoz/image/upload/v1644689089/blogmedia/qmykj6nsuizda3inivjj.svg" type="image/svg+xml" class="logo" width="100px" height="100px" ></li>
+            <li><a href="/"><img src="https://res.cloudinary.com/dgpxbrwoz/image/upload/v1644689089/blogmedia/qmykj6nsuizda3inivjj.svg" type="image/svg+xml" class="logo" width="100px" height="100px"></a></li>
             <li><a href="/">Home</a></li>
             <li><a href="/list/">Podcasts</a></li>
-            <li><a href="/about/">About</a></li>
+            <li><a href="/about/">Categories</a></li>
         </ul>
         
     </nav>
@@ -23,12 +23,12 @@
        <div class="playerpod">
        {% if episode.cover %}
             <div class="playerpodc">
-                <h3>{{ episode.title }}</h3>
+                <h3><a class="podlink" href="{{ episode.link }}">{{ episode.title }}</a></h3>
                 <img src="{{ episode.cover }}">
         {% else %}
             <div class="playerpodnc">
-                <h3>{{ episode.name }}</h3>
-                <h3>{{ episode.title }}</h3>
+                <h2>{{ episode.name }}</h3>
+                <h3><a class="podlink" href="{{ episode.link }}">{{ episode.title }}</a></h3>
        {% endif %}
             <audio controls="enabled" preload="none">
                 <source src="{{ episode.audiolink }}"

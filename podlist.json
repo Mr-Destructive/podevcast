@@ -1,7 +1,12 @@
-pod_list= {
+{
     "Command Line Heroes": "https://feeds.pacific-content.com/commandlineheroes",
     "Python Podcast": "https://www.pythonpodcast.com/feed/mp3/",
     "Talk Python to me": "https://talkpython.fm/episodes/rss",
     "Real Python Podcast": "https://realpython.com/podcasts/rpp/feed",
-    "Django Riffs": "https://feeds.simplecast.com/l_5sU3vk"
+    "Django Riffs": "https://feeds.simplecast.com/l_5sU3vk",
+    "CodeNewbie Podcast ": "http://feeds.codenewbie.org/cnpodcast.xml",
+    "Developer Tea": "https://feeds.simplecast.com/dLRotFGk", 
+    "The Freecodecamp Podcast": "https://freecodecamp.libsyn.com/rss",
+    "DevDiscuss Podcast": "https://feeds.devpods.dev/devdiscuss_podcast.xml",
+    "Remotely Interesting": "https://feeds.transistor.fm/remotely-interesting"
 }

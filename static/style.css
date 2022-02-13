@@ -39,7 +39,8 @@ nav>ul>li
 
 .listpod
 {   
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     list-style-type: none;
     align-items: center;
     justify-content: space-evenly;
@@ -61,7 +62,7 @@ li > a
 .podlink
 {
     text-decoration: none;
-    color: #555555;
+    color:var(--blue); 
 }
 
 audio { 
