@@ -71,6 +71,7 @@ for feed_link in feed_list:
 
         obj = {}
 
+        cover_image = cover_image.replace('http:', 'https:')
         obj['name'] = feed['feed']['title']
         obj['title'] = ep_title
         obj['audiolink'] = audiofiles
@@ -104,6 +105,7 @@ for feed_link in feed_list:
     
     if cover_image:
         pod_obj['cover'] = feed['feed']['image']['href']
+        pod_obj['cover'] = pod_obj['cover'].replace('http:', 'https:')
     else:
         pod_obj['cover'] = None
     pod_obj['list'] = ep_list
