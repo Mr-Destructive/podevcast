@@ -1,9 +1,14 @@
 {% extends 'index.html' %}
 
 {% block body %}
-    <link rel="stylesheet" href="../static/style.css" >
-    <h2>{{ podcast.title }}</h2>
-    <img src="{{ podcast.cove }}" >
+    <link rel="stylesheet" href="../../static/style.css" >
+    <div class="topod">
+        {% if podcast.cover %}
+            <img src="{{ podcast.cover }}" class="podcast-cover" >
+        {% endif %}
+        <h2 class="podcast-title">{{ podcast.title }}</h2>
+        <h4 class="podcast-link"><a href="{{ podcast.oglink }}">Podcast Link</a></h4>
+    </div>
 
     {% for ep in podcast.list %}
         <div class='playerpod'>

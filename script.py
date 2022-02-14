@@ -63,21 +63,23 @@ for feed_link in feed_list:
         if(feed['entries'][i].has_key('image')):
             audiofiles = feed['entries'][i]['links'][1]['href']
             cover_image = feed['entries'][i]['image']['href']
+            cover_image = cover_image.replace('http:', 'https:')
         else:
-            if feed_link is 'https://www.pythonpodcast.com/feed/mp3/':
+            if feed_link == 'https://www.pythonpodcast.com/feed/mp3/':
                 audiofiles = feed['entries'][i]['links'][2]['href']
                 cover_image = None
             elif (feed['feed']['image']['href']):
                 cover_image = feed['feed']['image']['href']
+                cover_image = cover_image.replace('http:', 'https:')
 
         obj = {}
 
-        cover_image = cover_image.replace('http:', 'https:')
         obj['name'] = feed['feed']['title']
         obj['title'] = ep_title
         obj['audiolink'] = audiofiles
 
         episode_obj['name'] = feed['feed']['title']
+        episode_obj['podlink'] = f"/{pod_name}/"
         episode_obj['title'] = ep_title
         episode_obj['audiolink'] = audiofiles 
         episode_obj['cover'] = cover_image
@@ -111,6 +113,7 @@ for feed_link in feed_list:
         pod_obj['cover'] = None
     pod_obj['list'] = ep_list
     pod_obj['links'] = f"/{pod_name}/"
+    pod_obj['oglink'] = feed['feed']['link']
     pod_list.append(pod_obj)
     
 

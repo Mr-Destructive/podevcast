@@ -1,13 +1,15 @@
 {
-        "Web Development": ["Django Riffs"], 
-        "Python": ["Talk Python To Me", "The Python Podcast.__init__", "The Real Python Podcast"], 
-        "Javascript": [], 
+        "Web Development": ["Django Riffs", "PHPUgly", "Remotely Interesting"], 
+        "Python": ["Talk Python To Me", "The Python Podcast.__init__", "The Real Python Podcast",
+            "Python Bytes"], 
+        "Javascript": ["Full Stack Radio"], 
         "Linux": ["Command Line Heroes"], 
-        "Artificial Intelligence": [], 
-        "Dev Lifestyle": [], 
-        "Frontend": [],
-        "Backend": [],
-        "Data Science": [],
-        "Dev Ops": [],
-        "Developer Talks": []
+        "Artificial Intelligence": ["Talking Machines"], 
+        "Dev Lifestyle": ["Developer Tea", "DevDiscuss Podcast", "Full Stack Radio"], 
+        "Frontend": ["CodePen Radio", "Ladybug Podcast"],
+        "Backend": ["The Backend Engineering Show", "PHPUgly", "Django Chat", "Django Riffs"],
+        "Data Science": ["Data Framed"],
+        "Dev Ops": ["DevOps Cafe", "Arrested DevOps", "Puppet Podcast",
+            "Azure DevOps Podcast", "DevOps and Docker"],
+        "Developer Talks": ["CodeNewbie Podcast","The Freecodecamp Podcast"]
 }

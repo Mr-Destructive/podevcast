@@ -8,5 +8,19 @@
     "Developer Tea": "https://feeds.simplecast.com/dLRotFGk", 
     "The Freecodecamp Podcast": "https://freecodecamp.libsyn.com/rss",
     "DevDiscuss Podcast": "https://feeds.devpods.dev/devdiscuss_podcast.xml",
-    "Remotely Interesting": "https://feeds.transistor.fm/remotely-interesting"
+    "Remotely Interesting": "https://feeds.transistor.fm/remotely-interesting",
+    "Python Bytes": "https://pythonbytes.fm/episodes/rss",
+    "Full Stack Radio": "https://feeds.transistor.fm/full-stack-radio",
+    "Ladybug Podcast": "https://pinecast.com/feed/ladybug-podcast",
+    "Data Framed": "https://feeds.buzzsprout.com/147669.rss",
+    "Talking Machines": "https://www.omnycontent.com/d/playlist/aaea4e69-af51-495e-afc9-a9760146922b/b92baa3c-b9c8-488c-aa9e-aafd001cbf66/12abbc3c-ae53-487a-b83b-aafd001cbf79/podcast.rss",
+    "DevOps Cafe": "https://devopscafe.libsyn.com/rss",
+    "Arrested DevOps": "https://www.arresteddevops.com/episode/index.xml",
+    "Puppet Podcast": "https://feeds.simplecast.com/Tk3lR_C_",
+    "Azure DevOps Podcast": "http://azuredevopspodcast.clear-measure.com/rss",
+    "DevOps and Docker": "https://feeds.transistor.fm/devops-and-docker-talk",
+    "Django Chat": "https://feeds.simplecast.com/WpQaX_cs",
+    "The Backend Engineering Show": "https://anchor.fm/s/1eb6d14/podcast/rss",
+    "PHPUgly": "https://feeds.simplecast.com/iYRiH9ym",
+    "CodePen Radio": "https://blog.codepen.io/feed/podcast/"
 }

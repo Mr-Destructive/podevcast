@@ -51,6 +51,10 @@ nav>ul>li
     border-bottom: 2px solid var(--blue);
 }
 
+a
+{
+    text-decoration: none;
+}
 
 li > a
 {
@@ -134,6 +138,54 @@ audio {
     position: relative;
     width: 50vw;
 }
+.desc
+{
+    padding-left: 20%;
+    padding-right: 20%;
+    font-size: 20px;
+}
+.podcast-cover
+{
+    width: 40%;
+    padding: 50px;
+}
+.podcast-title
+{
+    font-size: 40px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+}
+.ep-link
+{
+    position: relative;
+    left: 100%;
+    color: #000fff;
+    font-weight: 900;
+    text-decoration: none;
+    top: -5%;
+}
+.podcast-link
+{
+    position: relative;
+    color: #000fff;
+    font-weight: 900;
+    text-decoration: none;
+    left: 50%;
+}
+.ep-title
+{
+    width: 50vw;
+    position: relative;
+    color: var(--blue);
+    font-size: 30px;
+    font-weight: 800;
+}
+.topod
+{
+    display: fex;
+
+}
 
 .podnc
 {
@@ -141,7 +193,7 @@ audio {
     flex-wrap: wrap;
     justify-content: center;
     width: 200px;
-    height: 200px;
+    height: auto;
     position: relative;
     margin: 20px;
     border-bottom: 2px solid var(--blue);

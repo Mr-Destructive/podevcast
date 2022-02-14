@@ -5,17 +5,20 @@
     <div class="playerpod">
         {% if episode.cover %}
             <div class='playerpodc'>
-                <h3>{{ episode.title }}</h3>
+                <h3 class="ep-title">{{ episode.title }}</h3>
                 <img src="{{ episode.cover }}">
             </div>
         {% else %}
             <div class='playerpodnc'>
-                <h3>{{ episode.title }}</h3>
+                <h3 class="ep-title">{{ episode.title }}</h3>
             </div>
         {% endif %}
+        <a class="ep-link" href="{{ episode.link }}">Episode </a> 
+        <a class="ep-link" href="{{ episode.podlink }}">Podcast </a> 
         <audio controls="enabled" preload="none">
             <source src="{{ episode.audiolink }}" type="audio/mpeg">
         </audio>   
-        <p>{{ episode.summary }}</p> 
     </div>
+        <p class="desc">Date: {{ episode.date }}</p>
+        <p class="desc">{{ episode.summary }}</p> 
 {% endblock %}
