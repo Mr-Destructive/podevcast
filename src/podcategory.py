@@ -14,7 +14,7 @@ def create_podcast_category(category, pod_list):
     cat_list = list(category_list[category.replace('_', ' ')])
     cat_podcast_list = []
     
-    if cat_list:
+    if cat_list :
         for categ in cat_list:
             podcast_data = {}
             index = [ j for j, v in enumerate(pod_list) if categ in v.values()][0]
