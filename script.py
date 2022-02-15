@@ -4,6 +4,7 @@ from src.categories import create_category_page
 import feedparser
 import json
 import os
+import re
 
 template_env = Environment(loader=FileSystemLoader(searchpath='./layouts/'))
 
@@ -45,6 +46,9 @@ for feed_link in feed_list:
     pod_obj['title'] = feed['feed']['title']
 
     pod_name=pod_obj['title']
+    pod_name = re.sub('[^\w_.)( -]', '', pod_name)
+    pod_name = pod_name.replace('(', '_')
+    pod_name = pod_name.replace(')', '_')
     pod_name = pod_name.replace(' ', '_')
 
     os.system(f"cd site/ && mkdir list")
@@ -61,9 +65,12 @@ for feed_link in feed_list:
         ep_title = feed['entries'][i]['title']
 
         if(feed['entries'][i].has_key('image')):
-            audiofiles = feed['entries'][i]['links'][1]['href']
-            cover_image = feed['entries'][i]['image']['href']
-            cover_image = cover_image.replace('http:', 'https:')
+            if feed_link == 'https://feeds.buzzsprout.com/300035.rss':
+                audiofiles = feed['entries'][i]['links'][0]['href']
+            else:
+                audiofiles = feed['entries'][i]['links'][1]['href']
+                cover_image = feed['entries'][i]['image']['href']
+                cover_image = cover_image.replace('http:', 'https:')
         else:
             if feed_link == 'https://www.pythonpodcast.com/feed/mp3/':
                 audiofiles = feed['entries'][i]['links'][2]['href']
@@ -117,21 +124,21 @@ for feed_link in feed_list:
     pod_list.append(pod_obj)
     
 
-    with open(os.path.join(f"site/{pod_name}/index.html"), 'w') as pod_file:
+    with open(os.path.join(f"site/{pod_name}/index.html"), 'w', encoding='utf-8') as pod_file:
         pod_file.write(
             podcast_template.render(
                 podcast = pod_obj
                 )
             )
     
-with open(os.path.join('site/index.html'), 'w') as index_file:
+with open(os.path.join('site/index.html'), 'w', encoding='utf-8') as index_file:
     index_file.write(
         index_template.render(
             ep=ep,
         )
     )
 
-with open(os.path.join('site/list/index.html'), 'w') as list_file:
+with open(os.path.join('site/list/index.html'), 'w', encoding='utf-8') as list_file:
     list_file.write(
         list_template.render(
             ep=pod_list,

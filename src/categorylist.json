@@ -1,15 +1,13 @@
 {
-        "Web Development": ["Django Riffs", "PHPUgly", "Remotely Interesting"], 
-        "Python": ["Talk Python To Me", "The Python Podcast.__init__", "The Real Python Podcast",
-            "Python Bytes"], 
-        "Javascript": ["Full Stack Radio"], 
-        "Linux": ["Command Line Heroes"], 
-        "Artificial Intelligence": ["Talking Machines"], 
+        "Web Development": ["Django Riffs", "PHPUgly", "Remotely Interesting", "JavaScript Jabber"], 
+        "Python": ["Talk Python To Me", "The Python Podcast.__init__", "The Real Python Podcast", "Python Bytes"], 
+        "Javascript": ["Full Stack Radio", "JavaScript Jabber"], 
+        "Linux": ["Command Line Heroes", "LINUX Unplugged", "The Linux Cast", "Linux For Everyone"], 
+        "Artificial Intelligence": ["Talking Machines", "Practical AI: Machine Learning, Data Science", "The TWIML AI Podcast (formerly This Week in Machine Learning & Artificial Intelligence)"], 
         "Dev Lifestyle": ["Developer Tea", "DevDiscuss", "Full Stack Radio"], 
         "Frontend": ["CodePen Radio", "Ladybug Podcast"],
         "Backend": ["The Backend Engineering Show with Hussein Nasser", "PHPUgly", "Django Chat", "Django Riffs"],
-        "Data Science": ["DataFramed"],
-        "Dev Ops": ["DevOps Cafe Podcast", "Arrested DevOps", "Pulling the Strings",
-            "Azure DevOps Podcast", "DevOps and Docker Talk"],
+        "Data Science": ["DataFramed", "Data Skeptic", "The Banana Data Podcast"],
+        "Dev Ops": ["DevOps Cafe Podcast", "Arrested DevOps", "Pulling the Strings", "Azure DevOps Podcast", "DevOps and Docker Talk"],
         "Developer Talks": ["CodeNewbie","The freeCodeCamp Podcast"]
 }

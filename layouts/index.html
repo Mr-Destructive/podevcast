@@ -24,6 +24,7 @@
        {% if episode.cover %}
             <div class="playerpodc">
                 <h3><a class="podlink" href="{{ episode.link }}">{{ episode.title }}</a></h3>
+                <h3>{{ episode.name }}</h3>
                 <img src="{{ episode.cover }}">
         {% else %}
             <div class="playerpodnc">

@@ -13,7 +13,9 @@
                 <h3 class="ep-title">{{ episode.title }}</h3>
             </div>
         {% endif %}
+        <h4><a class="ep-link" href="{{ episode.link }}">{{ episode.name }}</a></h4>
         <a class="ep-link" href="{{ episode.link }}">Episode </a> 
+        | 
         <a class="ep-link" href="{{ episode.podlink }}">Podcast </a> 
         <audio controls="enabled" preload="none">
             <source src="{{ episode.audiolink }}" type="audio/mpeg">
