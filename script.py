@@ -65,12 +65,12 @@ for feed_link in feed_list:
         ep_title = feed['entries'][i]['title']
 
         if(feed['entries'][i].has_key('image')):
-            if feed_link == 'https://feeds.buzzsprout.com/300035.rss':
+            if feed_link in ['https://feeds.buzzsprout.com/300035.rss', "https://www.omnycontent.com/d/playlist/aaea4e69-af51-495e-afc9-a9760146922b/b92baa3c-b9c8-488c-aa9e-aafd001cbf66/12abbc3c-ae53-487a-b83b-aafd001cbf79/podcast.rss"]:
                 audiofiles = feed['entries'][i]['links'][0]['href']
             else:
                 audiofiles = feed['entries'][i]['links'][1]['href']
-                cover_image = feed['entries'][i]['image']['href']
-                cover_image = cover_image.replace('http:', 'https:')
+            cover_image = feed['entries'][i]['image']['href']
+            cover_image = cover_image.replace('http:', 'https:')
         else:
             if feed_link == 'https://www.pythonpodcast.com/feed/mp3/':
                 audiofiles = feed['entries'][i]['links'][2]['href']
