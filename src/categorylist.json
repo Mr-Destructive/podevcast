@@ -28,7 +28,7 @@
    ],
    "Dev Lifestyle":[
       "Developer Tea",
-      "DevDiscuss Podcast",
+      "DevDiscuss",
       "Full Stack Radio"
    ],
    "Frontend":[
@@ -36,25 +36,25 @@
       "Ladybug Podcast"
    ],
    "Backend":[
-      "The Backend Engineering Show",
+      "The Backend Engineering Show with Hussein Nasser",
       "PHPUgly",
       "Django Chat",
       "Django Riffs"
    ],
    "Data Science":[
-      "Data Framed",
+      "DataFramed",
       "Data Skeptic",
-      "Banana Data Podcast"
+      "The Banana Data Podcast"
    ],
    "Dev Ops":[
-      "DevOps Cafe",
+      "DevOps Cafe Podcast",
       "Arrested DevOps",
       "Pulling the Strings",
       "Azure DevOps Podcast",
-      "DevOps and Docker"
+      "DevOps and Docker Talk"
    ],
    "Developer Talks":[
-      "CodeNewbie Podcast",
-      "The Freecodecamp Podcast"
+      "CodeNewbie",
+      "The freeCodeCamp Podcast"
    ]
 }
