@@ -8,7 +8,7 @@ import re
 
 template_env = Environment(loader=FileSystemLoader(searchpath='./layouts/'))
 
-podcast_file= open(os.path.join('podlist.json'), 'r')
+podcast_file = open(os.path.join('podlist.json'), 'r')
 podcast_list = json.loads(podcast_file.read())
 podcast_file.close()
 feed_list = []
@@ -16,8 +16,8 @@ podcast_list_json = podcast_list.items()
 
 for k, v in podcast_list_json:
     feed_list.append(v)
-     
-ep=[]
+
+ep = []
 audiofiles = []
 ep_title = []
 pod_title = []
@@ -25,18 +25,19 @@ pod_list = []
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 output_dir = os.path.join(BASE_DIR, 'site')
-os.system('mkdir site')
+if not os.path.isdir(output_dir):
+    os.system('mkdir site')
 os.system('touch site/index.html')
 
 for feed_link in feed_list:
 
     pod_obj = {}
-    ep_list=[]
-    episode_obj= {}
-    c=0
-    
+    ep_list = []
+    episode_obj = {}
+    c = 0
+
     feed = feedparser.parse(feed_link)
-    #https://feeds.pacific-content.com/commandlineheroes
+    # https://feeds.pacific-content.com/commandlineheroes
 
     index_template = template_env.get_template('index.html')
     list_template = template_env.get_template('list.html')
@@ -45,26 +46,30 @@ for feed_link in feed_list:
 
     pod_obj['title'] = feed['feed']['title']
 
-    pod_name=pod_obj['title']
+    pod_name = pod_obj['title']
     pod_name = re.sub('[^\w_.)( -]', '', pod_name)
     pod_name = pod_name.replace('(', '_')
     pod_name = pod_name.replace(')', '_')
     pod_name = pod_name.replace(' ', '_')
 
-    os.system(f"cd site/ && mkdir list")
+    if not os.path.isdir('site/list'):
+        os.system(f"cd site/ && mkdir list")
     os.system("touch site/list/index.html")
 
-    os.system(f"cd site/ && mkdir {pod_name}")
-    os.system(f"cd site/{pod_name} && mkdir ep")
+    if not os.path.isdir(f'site/{pod_name}'):
+        os.system(f"cd site/ && mkdir {pod_name}")
+        if not os.path.isdir(f'site/{pod_name}/ep'):
+            os.system(f"cd site/{pod_name} && mkdir ep")
+
     os.system(f"touch site/{pod_name}/index.html")
 
-    for i in range(0,len(feed['entries'])):
+    for i in range(0, len(feed['entries'])):
 
-        c+=1
+        c += 1
 
         ep_title = feed['entries'][i]['title']
 
-        if(feed['entries'][i].has_key('image')):
+        if('image' in feed['entries'][i]):
             if feed_link in ['https://feeds.buzzsprout.com/300035.rss', "https://www.omnycontent.com/d/playlist/aaea4e69-af51-495e-afc9-a9760146922b/b92baa3c-b9c8-488c-aa9e-aafd001cbf66/12abbc3c-ae53-487a-b83b-aafd001cbf79/podcast.rss"]:
                 audiofiles = feed['entries'][i]['links'][0]['href']
             else:
@@ -88,22 +93,23 @@ for feed_link in feed_list:
         episode_obj['name'] = feed['feed']['title']
         episode_obj['podlink'] = f"/{pod_name}/"
         episode_obj['title'] = ep_title
-        episode_obj['audiolink'] = audiofiles 
+        episode_obj['audiolink'] = audiofiles
         episode_obj['cover'] = cover_image
         episode_obj['summary'] = str(feed['entries'][i]['summary'])
         episode_obj['link'] = feed['entries'][i]['links'][0]['href']
         episode_obj['date'] = feed['entries'][i]['published']
 
-        os.system(f"cd site/{pod_name}/ep && mkdir {c}")
+        if not os.path.isdir(f'site/{pod_name}/ep/{c}'):
+            os.system(f"cd site/{pod_name}/ep && mkdir {c}")
         os.system(f"touch site/{pod_name}/ep/{c}/index.html")
-        
+
         obj['link'] = f"/{pod_name}/ep/{c}"
         if cover_image:
             obj['cover'] = cover_image
         else:
             obj['cover'] = None
         ep_list.append(obj)
-        if(i==0):    
+        if(i == 0):
             ep.append(obj)
 
         with open(os.path.join(f"site/{pod_name}/ep/{c}/index.html"), 'w', encoding='utf-8') as ep_file:
@@ -112,7 +118,7 @@ for feed_link in feed_list:
                         episode = episode_obj
                         )
                     )
-    
+
     if cover_image:
         pod_obj['cover'] = feed['feed']['image']['href']
         pod_obj['cover'] = pod_obj['cover'].replace('http:', 'https:')
@@ -122,7 +128,6 @@ for feed_link in feed_list:
     pod_obj['links'] = f"/{pod_name}/"
     pod_obj['oglink'] = feed['feed']['link']
     pod_list.append(pod_obj)
-    
 
     with open(os.path.join(f"site/{pod_name}/index.html"), 'w', encoding='utf-8') as pod_file:
         pod_file.write(
@@ -130,7 +135,7 @@ for feed_link in feed_list:
                 podcast = pod_obj
                 )
             )
-    
+
 with open(os.path.join('site/index.html'), 'w', encoding='utf-8') as index_file:
     index_file.write(
         index_template.render(
@@ -148,4 +153,4 @@ with open(os.path.join('site/list/index.html'), 'w', encoding='utf-8') as list_f
 create_category_page(pod_list)
 
 os.system('cp -r static site')
-#os.system('python -m http.server -d site')
+# os.system('python -m http.server -d site')

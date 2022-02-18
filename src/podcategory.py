@@ -2,6 +2,7 @@ from jinja2 import Environment, FileSystemLoader
 import json
 import os
 
+
 def create_podcast_category(category, pod_list):
 
     category_file = open(os.path.join('src/categorylist.json'), 'r')
@@ -13,11 +14,11 @@ def create_podcast_category(category, pod_list):
 
     cat_list = list(category_list[category.replace('_', ' ')])
     cat_podcast_list = []
-    
-    if cat_list :
+
+    if cat_list:
         for categ in cat_list:
             podcast_data = {}
-            index = [ j for j, v in enumerate(pod_list) if categ in v.values()][0]
+            index = [j for j, v in enumerate(pod_list) if categ in v.values()][0]
             podcast_data['title'] = pod_list[index]['title']
             podcast_data['link'] = pod_list[index]['links']
             podcast_data['cover'] = pod_list[index]['cover']
@@ -30,8 +31,3 @@ def create_podcast_category(category, pod_list):
                         podcast_list = cat_podcast_list
                         )
                     )
-
-        
-
-
-

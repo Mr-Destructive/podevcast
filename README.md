@@ -1,10 +1,14 @@
-## Podevcast
+### Podevcast
 
 ### Podevcast is a web application or a static site that renders the top programming/development podcasts. You can listen to the top podcasts around developer community from a single source. 
 
 Podevcast, is a static site generated using a script. There is a static site generation which is heavily done in Python and deployed to Netlify. You can simply listen to the podcasts in the web page or go to the canonical page of the podcast episode. From the canonical page you can choose to hop to your choice music player, but the default music player should be fine for casual listening. The core idea is to keep things a single place for developer podcast.
 
 ## Preview
+
+Let's see a live demonstration of the application.
+
+[Podevcast preview gif](https://cdn.hashnode.com/res/hashnode/image/upload/v1645200224921/GC8gmxUzX.gif)
 
 Podevcast has multiple pages like:
 
@@ -32,7 +36,7 @@ The Episode page has the audio player, the summary of the episode, canonical epi
 
 ## Why Podevcast?
 
-Listening to music is one thing and listening to Podcast is different. I wanted a place from where developers can listen to developer specific podcast from a dingle source not just give out the article **"Top 10 podcast you should be listening as a developer"**. Having played around with python and some libraries like feedparser and jinga previously I saw this Hackathon as an opportunity to convert the idea into a project. It fits the JAMStack area well from the Hackathon and project perspective.  
+Listening to music is one thing and listening to Podcast is different. I wanted a place from where developers can listen to developer specific podcast from a dingle source not just give out the article **"Top 10 podcast you should be listening as a developer"**. So, it is for developers finding a place to listen to their favorite podcasts in a single place.
 
 ## Tech Stack
 
@@ -53,3 +57,8 @@ pip install -r rquirements.txt && python script.py
 ```
 
 And the directory for deployed web pages (published directory) is `site` which contains all the `HTML` files that can be rendered as the website itself. 
+
+## Contributing 
+
+Any Podcast you think should be added please do create a PR and add the RSS feed URL for the same podcast in the `podlist` JSON file, or even giving a suggestion by raising a issue will be suffice.
+

@@ -5,6 +5,7 @@ import feedparser
 import json
 import os
 
+
 def create_category_page(pod_list):
     category_file = open(os.path.join('src/categorylist.json'), 'r')
     category_list = json.loads(category_file.read())
@@ -17,7 +18,8 @@ def create_category_page(pod_list):
 
     catlist = []
 
-    os.system(f"cd site/ && mkdir category")
+    if not os.path.isdir(f'site/category'):
+        os.system(f"cd site/ && mkdir category")
 
     for category in categories:
         cat_obj = {}
@@ -25,8 +27,9 @@ def create_category_page(pod_list):
         category = category.replace(' ', '_')
         cat_obj['link'] = f"/category/{category}/"
         catlist.append(cat_obj)
-        
-        os.system(f"cd site/category && mkdir {category}")
+
+        if not os.path.isdir(f'site/category/{category}'):
+            os.system(f"cd site/category && mkdir {category}")
         os.system(f"touch site/category/index.html")
         os.system(f"touch site/category/{category}/index.html")
 
@@ -38,5 +41,3 @@ def create_category_page(pod_list):
                     categories = catlist
                     )
                 )
-
-
