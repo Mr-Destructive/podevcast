@@ -2,6 +2,8 @@
 
 {% block body %}
     <link rel="stylesheet" href="../static/style.css" >
+    <input id="searchbar" onkeyup="podcast_search()" type="text"
+        name="search" placeholder="Search Podcast" automplete="off">      
     <ul class="listpod">
     {% for podcast in ep %}
         {% if podcast.cover %}
@@ -16,4 +18,21 @@
         {% endif %}
     {% endfor %}
     </ul>
+
+    <script>
+    function podcast_search() {
+        let input = document.getElementById('searchbar').value
+        input=input.toLowerCase();
+        let x = document.getElementsByClassName('playerpod');
+          
+        for (i = 0; i < x.length; i++) { 
+            if (!x[i].innerHTML.toLowerCase().includes(input)) {
+                x[i].style.display="none";
+            }
+            else {
+                x[i].style.display="list-item";                 
+            }
+        }
+    }
+    </script>
 {% endblock %}
