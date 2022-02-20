@@ -56,5 +56,10 @@
    "Developer Talks":[
       "CodeNewbie",
       "The freeCodeCamp Podcast"
+   ],
+   "Android Development":[
+      "It's All Widgets! Flutter Podcast",
+      "Android Developers Backstage",
+      "Talking Kotlin"
    ]
 }
