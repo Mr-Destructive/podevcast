@@ -1,6 +1,7 @@
 from jinja2 import Environment, FileSystemLoader
-from pathlib import Path
 from src.categories import create_category_page
+from pathlib import Path
+from random import sample
 import feedparser
 import json
 import os
@@ -74,15 +75,13 @@ for feed_link in feed_list:
                 audiofiles = feed['entries'][i]['links'][0]['href']
             else:
                 audiofiles = feed['entries'][i]['links'][1]['href']
-            cover_image = feed['entries'][i]['image']['href']
-            cover_image = cover_image.replace('http:', 'https:')
+            cover_image = (feed['entries'][i]['image']['href']).replace('http:', 'https:')
         else:
             if feed_link == 'https://www.pythonpodcast.com/feed/mp3/':
                 audiofiles = feed['entries'][i]['links'][2]['href']
                 cover_image = None
             elif (feed['feed']['image']['href']):
-                cover_image = feed['feed']['image']['href']
-                cover_image = cover_image.replace('http:', 'https:')
+                cover_image = (feed['feed']['image']['href']).replace('http:', 'https:')
 
         obj = {}
 
@@ -120,8 +119,7 @@ for feed_link in feed_list:
                     )
 
     if cover_image:
-        pod_obj['cover'] = feed['feed']['image']['href']
-        pod_obj['cover'] = pod_obj['cover'].replace('http:', 'https:')
+        pod_obj['cover'] = (feed['feed']['image']['href']).replace('http:', 'https:')
     else:
         pod_obj['cover'] = None
     pod_obj['list'] = ep_list
@@ -135,6 +133,8 @@ for feed_link in feed_list:
                 podcast = pod_obj
                 )
             )
+
+ep = sample(ep, 10)
 
 with open(os.path.join('site/index.html'), 'w', encoding='utf-8') as index_file:
     index_file.write(

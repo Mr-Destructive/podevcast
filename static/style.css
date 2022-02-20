@@ -3,6 +3,8 @@
 	--font:'Verdana', cursive;
 	--blue:#006eff;
 	--grey:#dddddd;
+    --text-color: #006eff;
+    --text-sec: black;
 }
 
 body
@@ -10,20 +12,26 @@ body
     margin: 0;
     padding: 0;
     background-color: var(--grey);
+    color: var(text—-sec)
+}
+.dark-mode
+{
+    --text-color: #d1d1d1;
+    --text-sec: white;
+	background-color:#343434;
 }
 
 nav 
 {
     background-color: var(--blue);
-    color: white;
     display: flex;
+    color: white;
     justify-content: space-around;
     align-items: center;
     min-height: 8vh;
 }
-nav>ul
+nav>ul, footer>ul
 {
-    color: white;
     list-style-type: none;
     display: flex;
     padding-right: 20px;
@@ -31,10 +39,15 @@ nav>ul
     justify-content: center;
 }
 
-nav>ul>li
+nav>ul>li, footer>ul>li{
+    padding-right: 20px;
+    font-size: 20px;
+}
+nav>ul>li>a
 {
     padding-right: 20px;
     font-size: 30px;
+    color: white;
 }
 
 .listpod
@@ -54,18 +67,18 @@ nav>ul>li
 a
 {
     text-decoration: none;
+    color:var(--text-color);
 }
 
 li > a
 {
     text-decoration: none;
-    color: #ffffff;
 }
 
 .podlink
 {
     text-decoration: none;
-    color:var(--blue); 
+    color:var(--text-color); 
 }
 
 audio { 
@@ -176,15 +189,13 @@ audio {
 .ep-title
 {
     width: 50vw;
-    position: relative;
     color: var(--blue);
     font-size: 30px;
     font-weight: 800;
 }
 .topod
 {
-    display: fex;
-
+    display: flex;
 }
 
 .podnc
@@ -234,3 +245,53 @@ audio {
 { 
     color: white;
 }
+
+.toggle {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 62px;
+    height: 32px;
+    display: inline-block;
+    position: relative;
+    border-radius: 50px;
+    overflow: hidden;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: #aaaaaa;
+    transition: background-color ease 0.3s;
+}
+
+.toggle:before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 2;
+    width: 28px;
+    height: 28px;
+    background: #fff;
+    left: 2px;
+    top: 2px;
+    border-radius: 45%;
+    text-shadow: -1px -1px rgba(0,0,0,0.15);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
+}
+
+.toggle:checked {
+    background-color: #333333;
+}
+
+.toggle:checked:before {
+    left: 25px;
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    border-top: 2px solid var(--grey);
+}
+

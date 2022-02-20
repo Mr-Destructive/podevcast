@@ -16,7 +16,7 @@
             <li><a href="/list/">Podcasts</a></li>
             <li><a href="/category/">Categories</a></li>
         </ul>
-        
+        <input class="toggle" type="checkbox" onchange="darkmode()"/>
     </nav>
    {% block body %}
    <div class="podhome">
@@ -41,5 +41,31 @@
        {% endfor %}
    </div>
    {% endblock %}
+   <footer>
+       <ul>
+           <li>
+                <a href="/"><img src="https://res.cloudinary.com/dgpxbrwoz/image/upload/v1644676385/blogmedia/f1kddn4llpcwgd8aegvk.svg" type="image/svg+xml"></a>
+           </li>
+           <li><a href="https://github.com/Mr-Destructive/podevcast/">GitHub</a></li>
+           <li><a href="https://techstructiveblog.hashnode.dev/podevcast-a-single-source-for-developer-podcasts">About</a></li>
+           <li><a href="https://meetrgor.netlify.app/index.html#contact">Contact</a></li>
+       </ul>
+   </footer>
 </body>
+<script>
+    const element = document.body;
+    function darkmode() {
+       element.classList.toggle("dark-mode");
+        if(element.classList.contains('dark-mode')){ 
+            localStorage.setItem('darkMode', 'enabled'); 
+        }
+        else{
+            localStorage.setItem('darkMode', 'disabled');
+        }
+    }
+
+    if(localStorage.getItem('darkMode') == 'enabled'){
+        element.classList.toggle('dark-mode');
+    }
+</script>
 </html>
