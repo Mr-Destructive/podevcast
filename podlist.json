@@ -34,5 +34,8 @@
    "It's All Widgets! Flutter Podcast":"https://itsallwidgets.com/podcast/feed",
    "Android Developers Backstage":"http://feeds.libsyn.com/332855/rss",
    "Talking Kotlin":"https://feeds.soundcloud.com/users/soundcloud:users:280353173/sounds.rss",
-   "JAMstack Radio":"https://heavybit.com/category/library/podcasts/jamstack-radio/feed/feed.rss"
+   "JAMstack Radio":"https://heavybit.com/category/library/podcasts/jamstack-radio/feed/feed.rss",
+   "Google Cloud Platform Podcast":"https://googlecloudpodcast.libsyn.com/rss",
+   "Go Time: Golang, Software Engineering":"https://changelog.com/gotime/feed",
+   "Rustacean Station":"https://rustacean-station.org/podcast.rss"
 }

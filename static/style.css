@@ -2,6 +2,7 @@
 {
 	--font:'Verdana', cursive;
 	--blue:#006eff;
+    --light-blue:#38c7ff;
 	--grey:#dddddd;
     --text-color: #006eff;
     --text-sec: black;
@@ -69,7 +70,10 @@ a
     text-decoration: none;
     color:var(--text-color);
 }
-
+p
+{
+    color: var(--text-sec);
+}
 li > a
 {
     text-decoration: none;
@@ -156,6 +160,7 @@ audio {
     padding-left: 20%;
     padding-right: 20%;
     font-size: 20px;
+    color: var(--text-sec);
 }
 .podcast-cover
 {
@@ -173,7 +178,6 @@ audio {
 {
     position: relative;
     left: 100%;
-    color: #000fff;
     font-weight: 900;
     text-decoration: none;
     top: -5%;
@@ -189,7 +193,7 @@ audio {
 .ep-title
 {
     width: 50vw;
-    color: var(--blue);
+    color: var(--light-blue);
     font-size: 30px;
     font-weight: 800;
 }
@@ -214,7 +218,7 @@ audio {
     z-index: 3;
     width: 50vw;
     position: relative;
-    color: var(--blue);
+    color: var(--light-blue);
     font-weight: 800;
 }
 
