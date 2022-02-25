@@ -1,4 +1,4 @@
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment, FileSystemLoader, select_autoescape
 import json
 import os
 
@@ -9,7 +9,9 @@ def create_podcast_category(category, pod_list):
     category_list = json.loads(category_file.read())
     category_file.close()
 
-    template_env = Environment(loader=FileSystemLoader(searchpath='./layouts/'))
+    loader = FileSystemLoader(searchpath='./layouts/')
+    template_env = Environment(loader=loader, autoescape=select_autoescape())
+
     podcast_list_template = template_env.get_template('category.html')
 
     cat_list = list(category_list[category.replace('_', ' ')])

@@ -1,4 +1,4 @@
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment, FileSystemLoader, select_autoescape
 from src.categories import create_category_page
 from pathlib import Path
 from random import sample
@@ -7,7 +7,8 @@ import json
 import os
 import re
 
-template_env = Environment(loader=FileSystemLoader(searchpath='./layouts/'))
+loader = FileSystemLoader(searchpath='./layouts/')
+template_env = Environment(loader=loader, autoescape=select_autoescape())
 
 podcast_file = open(os.path.join('podlist.json'), 'r')
 podcast_list = json.loads(podcast_file.read())

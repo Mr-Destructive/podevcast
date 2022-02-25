@@ -1,4 +1,4 @@
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment, FileSystemLoader, select_autoescape
 from pathlib import Path
 from .podcategory import create_podcast_category
 import feedparser
@@ -13,7 +13,8 @@ def create_category_page(pod_list):
 
     categories = list(category_list.keys())
 
-    template_env = Environment(loader=FileSystemLoader(searchpath='./layouts/'))
+    loader = FileSystemLoader(searchpath='./layouts/')
+    template_env = Environment(loader=loader, autoescape=select_autoescape())
     category_template = template_env.get_template('categories.html')
 
     catlist = []
