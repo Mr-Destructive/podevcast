@@ -3,7 +3,7 @@
 {% block body %}
     <link rel="stylesheet" href="../static/style.css" >
     <input id="searchbar" onkeyup="podcast_search()" type="text"
-        name="search" placeholder="Search Podcast" automplete="off">      
+        name="search" placeholder="Search Podcast" autocomplete="off">      
     <ul class="listpod">
     {% for podcast in ep %}
         {% if podcast.cover %}

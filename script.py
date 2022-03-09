@@ -72,7 +72,9 @@ for feed_link in feed_list:
         ep_title = feed['entries'][i]['title']
 
         if('image' in feed['entries'][i]):
-            if feed_link in ['https://feeds.buzzsprout.com/300035.rss', "https://www.omnycontent.com/d/playlist/aaea4e69-af51-495e-afc9-a9760146922b/b92baa3c-b9c8-488c-aa9e-aafd001cbf66/12abbc3c-ae53-487a-b83b-aafd001cbf79/podcast.rss"]:
+            if feed_link in ['https://feeds.buzzsprout.com/300035.rss', 
+                            "https://www.omnycontent.com/d/playlist/aaea4e69-af51-495e-afc9-a9760146922b/b92baa3c-b9c8-488c-aa9e-aafd001cbf66/12abbc3c-ae53-487a-b83b-aafd001cbf79/podcast.rss", 
+                            "https://feeds.buzzsprout.com/1097978.rss"]:
                 audiofiles = feed['entries'][i]['links'][0]['href']
             else:
                 audiofiles = feed['entries'][i]['links'][1]['href']

@@ -37,5 +37,7 @@
    "JAMstack Radio":"https://heavybit.com/category/library/podcasts/jamstack-radio/feed/feed.rss",
    "Google Cloud Platform Podcast":"https://googlecloudpodcast.libsyn.com/rss",
    "Go Time: Golang, Software Engineering":"https://changelog.com/gotime/feed",
-   "Rustacean Station":"https://rustacean-station.org/podcast.rss"
+   "Rustacean Station":"https://rustacean-station.org/podcast.rss",
+   "Kubernetes Podcast from Google":"https://kubernetespodcast.com/feeds/audio.xml",
+   "The Sourcegraph Podcast":"https://feeds.buzzsprout.com/1097978.rss"
 }
