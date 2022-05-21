@@ -1,6 +1,9 @@
-### Podevcast
+[<img src="https://raw.githubusercontent.com/Mr-Destructive/podevcast/main/static/podevcast.svg">](https://podevcast.netlify.app)
 
-### Podevcast is a web application or a static site that renders the top programming/development podcasts. You can listen to the top podcasts around developer community from a single source. 
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c2d492f1-fc15-4634-8257-2260dac4f46f/deploy-status)](https://app.netlify.com/sites/podevcast/deploys)
+
+---
 
 Podevcast, is a static site generated using a script. There is a static site generation which is heavily done in Python and deployed to Netlify. You can simply listen to the podcasts in the web page or go to the canonical page of the podcast episode. From the canonical page you can choose to hop to your choice music player, but the default music player should be fine for casual listening. The core idea is to keep things a single place for developer podcast.
 
