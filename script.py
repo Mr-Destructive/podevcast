@@ -74,10 +74,12 @@ for feed_link in feed_list:
         if('image' in feed['entries'][i]):
             if feed_link in ['https://feeds.buzzsprout.com/300035.rss', 
                             "https://www.omnycontent.com/d/playlist/aaea4e69-af51-495e-afc9-a9760146922b/b92baa3c-b9c8-488c-aa9e-aafd001cbf66/12abbc3c-ae53-487a-b83b-aafd001cbf79/podcast.rss", 
+                            "https://pinecast.com/feed/ladybug-podcast",
                             "https://feeds.buzzsprout.com/1097978.rss"]:
                 audiofiles = feed['entries'][i]['links'][0]['href']
             else:
-                audiofiles = feed['entries'][i]['links'][1]['href']
+                if len(feed["entries"][i]['links']) > 1:
+                    audiofiles = feed['entries'][i]['links'][1]['href']
             cover_image = (feed['entries'][i]['image']['href']).replace('http:', 'https:')
         else:
             if feed_link == 'https://www.pythonpodcast.com/feed/mp3/':
