@@ -1,0 +1,5 @@
+<form method="POST" enctype="multipart/form-data" action='.'>
+    {% csrf_token %}
+    {{form.as_p}}
+    <button id="send">Add Podcast RSS</button>
+</form>
