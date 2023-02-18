@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.views.generic import CreateView
+from django.views.generic.detail import DetailView
 from django.views.generic.edit import UpdateView
 from django.views.generic.list import ListView
-from podcasts.models import Pod, Podcast
+from podcasts.models import Episode, Pod, Podcast
 from podcasts.forms import PodForm
 
 
@@ -29,3 +30,13 @@ class PodList(ListView):
 class PodcastList(ListView):
     model = Podcast
     template_name = 'podcast/list.html'
+
+
+class PodcastDetail(DetailView):
+    model = Podcast
+    template_name = 'podcast/detail.html'
+
+    def get_context_data(self, **kwargs):
+        obj = super().get_context_data(**kwargs)
+        obj['episodes'] = Episode.objects.filter(podcast_name_id=obj['podcast'].id).order_by('date')
+        return obj

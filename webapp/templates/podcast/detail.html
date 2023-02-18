@@ -1,0 +1,4 @@
+<h1>{{ podcast.title }}</h1>
+{% for episode in episodes %}
+<li><a href="{{ episode.link }}">{{ episode.title }}</a></li>
+{% endfor %}
