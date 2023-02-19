@@ -46,10 +46,11 @@ for feed_link in feed_list:
     podcast_template = template_env.get_template('podcast.html')
     episode_template = template_env.get_template('episode.html')
 
-    pod_obj['title'] = feed['feed']['title']
+    print(feed_link)
+    pod_obj['title'] = feed.get('feed').get('title')
 
     pod_name = pod_obj['title']
-    pod_name = re.sub('[^\w_.)( -]', '', pod_name)
+    pod_name = re.sub("[^a-zA-Z0-9\s]+", "", pod_name)
     pod_name = pod_name.replace('(', '_')
     pod_name = pod_name.replace(')', '_')
     pod_name = pod_name.replace(' ', '_')
@@ -80,12 +81,12 @@ for feed_link in feed_list:
             else:
                 if len(feed["entries"][i]['links']) > 1:
                     audiofiles = feed['entries'][i]['links'][1]['href']
-            cover_image = (feed['entries'][i]['image']['href']).replace('http:', 'https:')
+            cover_image = feed['entries'][i]['image']['href'].replace('http:', 'https:')
         else:
             if feed_link == 'https://www.pythonpodcast.com/feed/mp3/':
-                audiofiles = feed['entries'][i]['links'][2]['href']
+                audiofiles = feed['entries'][i]['links'][1]['href']
                 cover_image = None
-            elif (feed['feed']['image']['href']):
+            elif feed.feed.get('image').get('href'):
                 cover_image = (feed['feed']['image']['href']).replace('http:', 'https:')
 
         obj = {}
@@ -124,7 +125,7 @@ for feed_link in feed_list:
                     )
 
     if cover_image:
-        pod_obj['cover'] = (feed['feed']['image']['href']).replace('http:', 'https:')
+        pod_obj['cover'] = cover_image.replace('http:', 'https:')
     else:
         pod_obj['cover'] = None
     pod_obj['list'] = ep_list
