@@ -20,7 +20,6 @@ def create_podcast_category(category, pod_list):
     if cat_list:
         for categ in cat_list:
             podcast_data = {}
-            print(pod_list[0].get(categ))
             index = [j for j, v in enumerate(pod_list) if categ in v.values()][0]
             podcast_data['title'] = pod_list[index]['title']
             podcast_data['link'] = pod_list[index]['links']

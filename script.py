@@ -46,7 +46,6 @@ for feed_link in feed_list:
     podcast_template = template_env.get_template('podcast.html')
     episode_template = template_env.get_template('episode.html')
 
-    print(feed_link)
     pod_obj['title'] = feed.get('feed').get('title')
 
     pod_name = pod_obj['title']
