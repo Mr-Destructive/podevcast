@@ -1,0 +1,6 @@
+asgiref==3.6.0
+Django==4.1.7
+feedparser==6.0.10
+python-dotenv==0.21.1
+sgmllib3k==1.0.0
+sqlparse==0.4.3
