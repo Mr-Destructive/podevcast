@@ -61,6 +61,10 @@ pip install -r rquirements.txt && python script.py
 
 And the directory for deployed web pages (published directory) is `site` which contains all the `HTML` files that can be rendered as the website itself. 
 
+## Django Application
+
+There is also a django app for the same project, but not deployed. It is still in development, and it is just developed for understanding and learning some concepts in django. The [webapp](https://github.com/Mr-Destructive/podevcast/tree/main/webapp) folder holds the django project and is independent of the python static site application.
+
 ## Contributing 
 
 Any Podcast you think should be added please do create a PR and add the RSS feed URL for the same podcast in the `podlist` JSON file, or even giving a suggestion by raising a issue will be suffice.
