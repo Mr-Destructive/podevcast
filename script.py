@@ -93,6 +93,7 @@ for feed_link in feed_list:
         obj['name'] = feed['feed']['title']
         obj['title'] = ep_title
         obj['audiolink'] = audiofiles
+        obj['date'] = feed['entries'][i]['published']
 
         episode_obj['name'] = feed['feed']['title']
         episode_obj['podlink'] = f"/{pod_name}/"
@@ -101,7 +102,7 @@ for feed_link in feed_list:
         episode_obj['cover'] = cover_image
         episode_obj['summary'] = str(feed['entries'][i]['summary'])
         episode_obj['link'] = feed['entries'][i]['links'][0]['href']
-        episode_obj['date'] = feed['entries'][i]['published']
+        episode_obj['date'] = obj["date"]
 
         if not os.path.isdir(f'site/{pod_name}/ep/{c}'):
             os.system(f"cd site/{pod_name}/ep && mkdir {c}")
@@ -139,7 +140,7 @@ for feed_link in feed_list:
                 )
             )
 
-ep = sample(ep, 10)
+ep = sorted(ep, key=lambda x: x["date"], reverse=True)[:10]
 
 with open(os.path.join('site/index.html'), 'w', encoding='utf-8') as index_file:
     index_file.write(
