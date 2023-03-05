@@ -140,7 +140,7 @@ for feed_link in feed_list:
                 )
             )
 
-ep = sorted(ep, key=lambda x: x["date"], reverse=True)[:10]
+ep = sorted(ep, key=lambda x: x["date"], reverse=True)[:13][3:]
 
 with open(os.path.join('site/index.html'), 'w', encoding='utf-8') as index_file:
     index_file.write(
